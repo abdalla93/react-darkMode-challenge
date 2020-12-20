@@ -1,22 +1,19 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from '../../../hooks/useDarkMode';
 import { lightTheme, darkTheme } from '../styles/theme';
-import { GlobalStyles } from '../styles/global';
 import Toggle from './Toggle';
 import '../styles/_app.scss';
 
 
+
 function App() {
   const [theme, toggleTheme] = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme :  darkTheme;
   return (
-    <ThemeProvider theme={themeMode}>
-    <GlobalStyles />
+    <div className={`${theme === 'dark' ?"dark-mode":"" }`}>
     <div className="app">
       <div className="level">
         <div>
-          <h1 className="newTitle">Dark Mode Challenge</h1>
+          <h1 className="title">Dark Mode Challenge</h1>
         </div>
         <Toggle theme={theme} toggleTheme={toggleTheme} />
       </div>
@@ -49,7 +46,8 @@ function App() {
         </div>
       </section>
     </div>
-    </ThemeProvider>
+    </div>
+   
   );
 }
 

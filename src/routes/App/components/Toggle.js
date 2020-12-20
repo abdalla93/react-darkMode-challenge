@@ -9,7 +9,7 @@ const Toggle = ({ theme, toggleTheme }) => {
   const isDark = theme === 'dark';
   return (
     <button  onClick={toggleTheme}  className="app__dark-mode-btn icon level-right">
-        <FontAwesomeIcon color={isDark?'white':''} icon={faMoon} />
+        <FontAwesomeIcon color={isDark?'#f9d71c':''} icon={faMoon} />
     </button>
   );
 };
